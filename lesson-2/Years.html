@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+        'use strict';
+
+        /* Этот файл сугубо для теста функций */
+
+        function validityAge() {
+            var ageYears = Number(prompt("Некорректный ввод данных, введите ВОЗРАСТ ещё раз:"));
+            if (isNaN(ageYears) || ageYears <= 0) {
+                validityAge();
+            } else {
+                age = ageYears;
+            }
+        }
+
+        var age = Number(prompt("Введите ваш возраст"));
+        if (isNaN(age) || age <= 0) {
+            validityAge();
+        }
+
+        var ageDays = age * 365;
+        var age5YearsLater = age + 5;
+        var pension = (age >= 60) ? 'да' : 'нет';
+
+        alert('Ваш возвраст в годах: ' + age +
+            '\nВаш возвраст в дняж: ' + ageDays +
+            '\nВаш возвраст через 5 лет: ' + age5YearsLater +
+            '\nВы на пенсии: ' + pension);
+    </script>
+  </body>
+</html>

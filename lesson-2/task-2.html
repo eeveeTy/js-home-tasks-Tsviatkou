@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>task-2</title>
+  </head>
+  <body>
+    <script>
+        function validityAge() {
+            var ageYears = Number(prompt("Некорректный ввод данных, введите ВОЗРАСТ ещё раз:"));
+            if (isNaN(ageYears) || ageYears <= 0) {
+                validityAge();
+            } else {
+                age = ageYears;
+            }
+        }
+
+
+        var lastName = prompt('Ваша фамилия ?');
+        var firstName = prompt('Ваше имя ?');
+        var middleName = prompt('Ваша отчество ?');
+        var gander = confirm('Ваш пол мужской? ');
+        var fullName = lastName + ' ' + firstName + ' ' + middleName;
+
+
+        var age = Number(prompt("Введите ваш возраст"));
+        if (isNaN(age) || age <= 0) {
+            validityAge();
+        }
+        var ageDays = age * 365;
+        var age5YearsLater = age + 5;
+        var pension = (age >= 60) ? 'да' : 'нет';
+
+
+        switch (gander)
+        {
+            case true:
+                gander = 'мужской';
+                break;
+            case false:
+                gander = 'женский';
+                break;
+        }
+
+
+        alert('ваше ФИО: ' + fullName +
+            '\nваш возвраст в годах: ' + age +
+            '\nваш возвраст в дняж: ' + ageDays +
+            '\nчерез 5 лет вам будет: ' + age5YearsLater +
+            '\nваш пол: ' + gander +
+            '\nвы на пенсии: ' + pension);
+    </script>
+  </body>
+</html>
