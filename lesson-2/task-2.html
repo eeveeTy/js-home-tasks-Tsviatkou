@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>task-2</title>
+  </head>
+  <body>
+    <script>
+        var lastName = prompt('Ваша фамилия ?');
+        var firstName = prompt('Ваше имя ?');
+        var middleName = prompt('Ваша отчество ?');
+        var ageYears = parseInt(prompt('Ваш возраст ?'));
+        var gander = confirm('Ваш пол мужской? ');
+
+        var fullName = lastName + ' ' + firstName + ' ' + middleName;
+
+        var pension = (ageYears >= 60) ? 'да' : 'нет';
+
+        ageDays = ageYears * 365;
+        age5YearsLater = ageYears + 5;
+
+        switch (gander)
+        {
+            case true:
+                gander = 'мужской';
+                break;
+            case false:
+                gander = 'женский';
+                break;
+        }
+
+
+        alert('ваше ФИО: ' + fullName + '\nваш возвраст в годах: ' + ageYears + '\nваш возвраст в дняж: ' + ageDays +
+            '\nчерез 5 лет вам будет: ' + age5YearsLater + '\nваш пол: ' + gander + '\nвы на пенсии: ' + pension);
+    </script>
+  </body>
+</html>
