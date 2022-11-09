@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+  </head>
+  <body>
+    <script>
+        var image = {
+            width: 100,
+            height: 400,
+            title: 'Cool image'
+        };
+
+        function multiplyNumeric(obj) {
+            for (let key in obj) {
+                if (typeof obj[key] == 'number') {
+                    obj[key] *= 2;
+                }
+            }
+            // return - я понимаю что должен вывести что-то, но я не совсем понимаю что именно
+            return obj; // по этому сделал так
+        }
+
+        console.log(multiplyNumeric(image));
+    </script>
+  </body>
+</html>
