@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task-2</title>
+  </head>
+  <body>
+    <script>
+        var obj = {
+            className: 'my menu menu'
+        };
+
+        function removeClass(obj, cls) {
+            var arr = obj.className.split(' ');
+
+            for(i = 0; i < arr.length; i++){
+                if(arr[i] === cls){
+                    delete arr[i];
+                }
+            }
+            return arr.join(' ');
+        }
+
+        alert(removeClass(obj, prompt('Введите класс, который хотите удалить: ')));
+    </script>
+  </body>
+</html>
