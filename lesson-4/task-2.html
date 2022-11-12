@@ -15,13 +15,15 @@
 
             for(i = 0; i < arr.length; i++){
                 if(arr[i] === cls){
-                    delete arr[i];
+                    arr.splice(i, 1);
+                    i--;
                 }
             }
             return arr.join(' ');
         }
 
-        alert(removeClass(obj, prompt('Введите класс, который хотите удалить: ')));
+        console.log(removeClass(obj, 'blabla'));
+        console.log(removeClass(obj, 'menu'));
     </script>
   </body>
 </html>
