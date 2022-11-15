@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task-2</title>
+  </head>
+  <body>
+    <script>
+        var obj = {
+            className: 'my menu menu'
+        };
+
+        function removeClass(obj, cls) {
+            var arr = obj.className.split(' ');
+
+            for(i = 0; i < arr.length; i++){
+                if(arr[i] === cls){
+                    arr.splice(i, 1);
+                    i--;
+                }
+            }
+            return arr.join(' ');
+        }
+
+        console.log(removeClass(obj, 'blabla'));
+        console.log(removeClass(obj, 'menu'));
+    </script>
+  </body>
+</html>

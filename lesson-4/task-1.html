@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task-1</title>
+  </head>
+  <body>
+    <script>
+        var str = '';
+        var n = Number(prompt("Введите число: "));
+
+        if (Number.isInteger(n)) {
+            for (var i = 0; i < n * n + n - 1; i++) {
+                if (i === 0 || i % 2 === 0 ) {
+                    str += '#';
+                } else {
+                    str += ' ';
+                }
+                if ((str.length + 1) % (n + 1) === 0) {
+                    str += '\n';
+                    i += 1;
+                }
+            }
+            console.log(str);
+        } else {
+            console.log('Не корректный ввод данных!!! ');
+        }
+    </script>
+  </body>
+</html>
