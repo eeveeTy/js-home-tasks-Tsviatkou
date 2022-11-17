@@ -68,6 +68,29 @@
         // а потом умножить его на получившееся число.
         // Но в таком случае много знаком после запятой, но с точки зрения математики, должно быть именно так.
         // Я сделал так, чтоб остаток был по минимум, но понимаю, что математически - это не верно!!!
+
+
+        // Сравнение Джона и Марка
+
+        function averageTips(tips) {
+            var sum = 0;
+            for (var i = 0; i < tips.length; i++) {
+                sum += tips[i];
+            }
+            return sum / (tips.length);
+        }
+
+        console.log("Семья Джона потратила: " + averageTips(tipsJohn.tipsLeft).toFixed(2)); // тут просто было 18.08000000002
+        console.log("Семья Джона потратила: " + averageTips(tipsMark.tipsLeft).toFixed(2)); // а тут за компанию
+
+
+        if (averageTips(tipsMark.tipsLeft).toFixed(2) > averageTips(tipsJohn.tipsLeft).toFixed(2)) {
+            console.log("Марк с семьёй заплатили больше!");
+        } else if (averageTips(tipsJohn.tipsLeft).toFixed(2) > averageTips(tipsMark.tipsLeft).toFixed(2)) {
+            console.log("Джон с с семьёй заплатили больше!");
+        } else {
+            console.log("Джон и Марк платят одинаково!");
+        }
     </script>
   </body>
 </html>
