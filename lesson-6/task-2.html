@@ -7,21 +7,20 @@
   <body>
     <script>
         function interviewQuestion(a) {
-            if (a === 'teacher') {
-                console.log('What subject do you teach John?')
-            } else if (a === 'designer') {
-                console.log('John can you please explain what UX design is?')
-            } else {
-                console.log('Hello John, what do you do?')
-            }
             return function test(b) {
-                return a + b;
+                if (a === 'teacher') {
+                    console.log('What subject do you teach ' + b)
+                } else if (a === 'designer') {
+                    console.log(b + ' can you please explain what UX design is?')
+                } else {
+                    console.log('Hello, ' + b + ' what do you do?')
+                }
             }
         }
 
         interviewQuestion('teacher')('John');
         interviewQuestion('designer')('Mark');
-        interviewQuestion('other')('Hloe');
+        interviewQuestion('slam')('Alex');
     </script>
   </body>
 </html>
