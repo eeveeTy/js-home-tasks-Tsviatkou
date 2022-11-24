@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task-2</title>
+  </head>
+  <body>
+    <script>
+        function interviewQuestion(a) {
+            return function interviewName(b) {
+                if (a === 'teacher') {
+                    console.log('What subject do you teach ' + b)
+                } else if (a === 'designer') {
+                    console.log(b + ' can you please explain what UX design is?')
+                } else {
+                    console.log('Hello, ' + b + ' what do you do?')
+                }
+            }
+        }
+
+        interviewQuestion('teacher')('John');
+        interviewQuestion('designer')('Mark');
+        interviewQuestion('slam')('Alex');
+    </script>
+  </body>
+</html>
