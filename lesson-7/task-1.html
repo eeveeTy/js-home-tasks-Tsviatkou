@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task-1</title>
+  </head>
+  <body>
+    <script>
+        "use strict";
+
+        function Question(questionAsked, answerOptions, correctAnswer) {
+
+            this.questionAsked = questionAsked;
+            this.answerOptions = answerOptions;
+            this.correctAnswer = correctAnswer;
+            this.questionAndOptions = function () {
+                return this.questionAsked + ' ' + this.answerOptions;
+            };
+
+            this.userCorrectAnswer = function () {
+                return console.log('Правльный ответ');
+            };
+
+            this.userWrongAnswer = function () {
+                return console.log('Неправильный ответ');
+            }
+        }
+
+        //заполняю конструкцию
+        var firstQuest = new Question('Столица Франции: ', '\n1. Париж \n2. Лион \n3. Марсель', '1');
+        var secondQuest = new Question('Сколько секунд в Минуте:', '\n1. 30 \n2. 60 \n3. 50', '2');
+        var thirdQuest = new Question('Название сериала "Убивая ... ": ', '\n1. Анну \n2. Друга \n3. Еву', '3');
+
+        // ложу вопросы в массив
+
+        var arr = [firstQuest.questionAsked + firstQuest.answerOptions, secondQuest.questionAsked + secondQuest.answerOptions, thirdQuest.questionAsked + thirdQuest.answerOptions];
+        //Я не совсем понимаю, зачем тут нужен массив
+
+        //рандом числа
+        var value = Math.floor(Math.random() * 3);
+        console.log(value);
+
+        // Выбираем вопрос рандомно
+        if (value === 0) {
+            console.log(firstQuest.questionAndOptions());
+            var finalAnswer = firstQuest.correctAnswer;
+            console.log(finalAnswer);
+        } else if (value === 1) {
+            console.log(secondQuest.questionAndOptions());
+            var finalAnswer = secondQuest.correctAnswer;
+            console.log(finalAnswer);
+        } else if (value === 2) {
+            console.log(thirdQuest.questionAndOptions());
+            var finalAnswer = thirdQuest.correctAnswer;
+            console.log(finalAnswer);
+        }
+
+        // Спрашиваем ответ
+        var userAnswer = prompt('Введите варинт ответа: ');
+        console.log(userAnswer);
+
+
+        //сравниваем ответы
+        if (userAnswer === finalAnswer) {
+            console.log('Правильный ответ!!!');
+        } else {
+            console.log('Неправильный ответ!!!');
+        }
+
+    </script>
+  </body>
+</html>
