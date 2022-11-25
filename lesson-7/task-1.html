@@ -16,14 +16,6 @@
             this.questionAndOptions = function () {
                 return this.questionAsked + ' ' + this.answerOptions;
             };
-
-            this.userCorrectAnswer = function () {
-                return console.log('Правльный ответ');
-            };
-
-            this.userWrongAnswer = function () {
-                return console.log('Неправильный ответ');
-            }
         }
 
         //заполняю конструкцию
@@ -38,26 +30,21 @@
 
         //рандом числа
         var value = Math.floor(Math.random() * 3);
-        console.log(value);
 
         // Выбираем вопрос рандомно
         if (value === 0) {
             console.log(firstQuest.questionAndOptions());
             var finalAnswer = firstQuest.correctAnswer;
-            console.log(finalAnswer);
         } else if (value === 1) {
             console.log(secondQuest.questionAndOptions());
             var finalAnswer = secondQuest.correctAnswer;
-            console.log(finalAnswer);
         } else if (value === 2) {
             console.log(thirdQuest.questionAndOptions());
             var finalAnswer = thirdQuest.correctAnswer;
-            console.log(finalAnswer);
         }
 
         // Спрашиваем ответ
-        var userAnswer = prompt('Введите варинт ответа: ');
-        console.log(userAnswer);
+        var userAnswer = prompt('Введите номер варинта ответа: ');
 
 
         //сравниваем ответы
