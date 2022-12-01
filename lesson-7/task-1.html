@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task-1</title>
+  </head>
+  <body>
+    <script>
+        "use strict";
+
+        function Question(questionAsked, answerOptions, correctAnswer) {
+
+            this.questionAsked = questionAsked;
+            this.answerOptions = answerOptions;
+            this.correctAnswer = correctAnswer;
+            this.questionAndOptions = function () {
+                return this.questionAsked + ' ' + this.answerOptions;
+            };
+            this.correctAnswerQuestion = function () {
+                return 'ПРАВИЛЬНО!!! Правильный вариант ответа: ' + this.correctAnswer;
+            };
+            this.wrongAnswerQuestion = function () {
+                return 'Увы((( Правильный вариант ответа: ' + this.correctAnswer;
+            }
+        }
+
+        var firstQuest = new Question('Столица Франции: ', '\n1. Париж \n2. Лион \n3. Марсель', '1');
+        var secondQuest = new Question('Сколько секунд в Минуте:', '\n1. 30 \n2. 60 \n3. 50', '2');
+        var thirdQuest = new Question('Название сериала "Убивая ... ": ', '\n1. Анну \n2. Друга \n3. Еву', '3');
+
+        var arrQuest = [firstQuest, secondQuest, thirdQuest];
+
+        var value = Math.floor(Math.random() * 3);
+        console.log(arrQuest[value].questionAsked + arrQuest[value].answerOptions);
+
+        var userAnswer = prompt('Введите номер варинта ответа: ');
+        if (userAnswer === arrQuest[value].correctAnswer) {
+            console.log(arrQuest[value].correctAnswerQuestion());
+        } else {
+            console.log(arrQuest[value].wrongAnswerQuestion());
+        }
+        // Почему-то с первой прогрузки сначала спрашивает Prompt, а уж потом выдаёт вопрос.
+        // Но если одновить, то вроде все нормально работает.
+    </script>
+  </body>
+</html>
