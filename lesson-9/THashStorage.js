@@ -1,12 +1,6 @@
 'use strict';
 
-(function () {
-
-    var addCoctail = document.getElementById('add-coctail');
-    var deleteCoctail = document.getElementById('delete-coctail');
-    var recipeCoctail = document.getElementById('recipe-coctail');
-    var allCoctail = document.getElementById('all-coctails');
-
+//(function () {
     function THashStorage() {
         this.store = {};
     }
@@ -29,4 +23,7 @@
     THashStorage.prototype.getKeys = function () {
         return Object.keys(this.store);
     }
-})();
+//})();
+//Я пытался сделать её не доступной, но из-за этого строка
+//var DrinkStorage = new THashStorage(); - она не находит переменную, по понятным причинам
+//Я не поинмаю как можно сделать по другому
