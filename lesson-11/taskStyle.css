@@ -1,0 +1,29 @@
+#space {
+    border: 3px solid black;
+    height: 600px;
+    width: 1000px;
+    margin: 70px 0 0 70px;
+}
+
+
+.imagesSize {
+    height: 150px;
+    top: 100px;
+    position: fixed;
+}
+
+#img1 {
+    left: 100px;
+}
+
+#img2 {
+    left: 350px;
+}
+
+#img3 {
+    left: 600px;
+}
+
+#img4 {
+    left: 850px;
+}
