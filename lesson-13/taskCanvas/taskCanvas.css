@@ -2,20 +2,10 @@
     width: 300px;
     height: 300px;
     border-radius: 150px;
-    background-color: #afaf28;
     font-size: 25px;
     line-height: 40px;
     text-align: center;
 }
-
-.childElem {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: darkseagreen;
-    position: absolute;
-}
-
 
 .wrapDigitalWatch {
     width: 120px;

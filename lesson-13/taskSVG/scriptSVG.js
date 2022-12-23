@@ -26,8 +26,8 @@ var wrap = document.getElementById('wrapper'),
 // создаём циферблат
 for (var i = 1; i <= hourDigits; i++) {
     var wrapChildElem = document.createElement("div"),// создали контейнер
-        smallCircle = document.createElement('img'),
         valueNumber = document.createElement('p'),
+        smallCircle = document.createElement('img'),
         angle,
         wrapChildElemCenterX,
         wrapChildElemCenterY;
@@ -50,8 +50,7 @@ for (var i = 1; i <= hourDigits; i++) {
     //вроде с блочной системой всё нормально, но откуда взялось я не понимаю(((
     //Я думаю что в стрелках дело, но я ничего странного не нашёл
     //Жду комментарий по этому поводу
-    smallCircle.style.marginLeft = "-20px";
-    valueNumber.style.marginLeft = "-20px";
+    smallCircle.style.width = "40px";
 
     wrapChildElemCenterX = wrapCenterX + radius * Math.sin(angle);
     wrapChildElemCenterY = wrapCenterY - radius * Math.cos(angle);

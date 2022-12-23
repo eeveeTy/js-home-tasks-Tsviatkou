@@ -24,12 +24,31 @@ var wrap = document.getElementById('wrapper'),
     minutesDeg = 6 * (time.getMinutes() + (1 / 60) * time.getSeconds()), //определяем по времени где должна быть стрелка минут
     secondsDeg = 6 * time.getSeconds() - 6; //определяем по времени где должна быть стрелка секунд
 
-console.log(wrapCenterX);
-console.log(wrapCenterY);
+
+//добовляем канвас на страницу и находим его
+var canvasAdd = document.createElement("canvas");
+canvasAdd = wrap.appendChild(canvasAdd);
+var canvasSmallCircle = document.querySelector('canvas');
+canvasSmallCircle.style.width = "300px";
+canvasSmallCircle.style.height = "300px";
+
+var context = canvasSmallCircle.getContext('2d');
+context.beginPath();
+context.fillStyle = '#afaf28';
+context.arc(150, 75 , 150, 0, Math.PI/0.5);
+context.fill();
+context.closePath();
+//Я не знаю почему получается вытянутый элипс!
+//У него как-то сбилось оси Y, он показвает на заданную высоту, но отрисовывает в двое больше.
+//Даже выше установлено Y=75 и это почему-то считается центром поля.
+//При попытки подстроить радиус под Y, он естественно не подстраивается под X.
+//Вообщем значения правильные, а почему не пашит я хз
+//Кароче, тьма проблем тут, жду пересдачу этого дз, ибо я вооюще не понимаю канвас
 
 // создаём циферблат
 for (var i = 1; i <= hourDigits; i++) {
     var wrapChildElem = document.createElement("div"),// создали контейнер
+        valueNumber = document.createElement('p'),
         angle,
         wrapChildElemCenterX,
         wrapChildElemCenterY;
@@ -38,11 +57,20 @@ for (var i = 1; i <= hourDigits; i++) {
     angle = angleValue / 180 * Math.PI;
 
     wrapChildElem = wrap.appendChild(wrapChildElem);//привязали конейнер
-    wrapChildElem.classList.add('childElem');//привязываеи CSS
-    wrapChildElem.innerHTML = i;//устанавливаем цифру
+    valueNumber = wrapChildElem.appendChild(valueNumber);
+    wrapChildElem.style.position =  "absolute";
+    valueNumber.textContent = i;
+    valueNumber.style.margin = "0";
+    valueNumber.style.width = "40px";
 
     wrapChildElemCenterX = wrapCenterX + radius * Math.sin(angle);
     wrapChildElemCenterY = wrapCenterY - radius * Math.cos(angle);
+
+    context.beginPath();
+    context.fillStyle = 'darkseagreen';
+    context.arc(wrapChildElemCenterX-20, wrapChildElemCenterY-20 , 20, 0, Math.PI/0.5);
+    context.fill();
+    context.closePath();
 
     wrapChildElem.style.left = Math.round(wrapChildElemCenterX - wrapChildElem.offsetWidth / 2) + "px";
     wrapChildElem.style.top = Math.round(wrapChildElemCenterY - wrapChildElem.offsetHeight / 2) + "px";
@@ -82,6 +110,7 @@ function arrows() {
     hoursDeg += 6 * (1 / 360);
     arrowHours.style.transform = "rotate(" + hoursDeg + "deg)";
 }
+
 
 window.onload = arrows();
 window.setInterval(arrows, 1000);
