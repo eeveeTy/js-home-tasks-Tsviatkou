@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <link rel="stylesheet" type="text/css" href="taskStyle.css">
+  </head>
+  <body>
+    <div>
+      <div class="manage-drinks">
+        <input type='button' value='Добавить напиток' onclick='addDrink()'>
+        <input type='button' value='Показать информацию о напитке' onclick='showDrinkInfo()'>
+        <input type='button' value='Удалить напиток' onclick='removeDrink()'>
+        <input type='button' value='Показать меню напитков' onclick='showDrinksMenu()'>
+      </div>
+      <p id="drinkInfoP"></p>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.0.js"></script>
+    <script src="taskAJAX.js" defer></script>
+    <script src="taskDrinkScript.js" defer></script>
+  </body>
+</html>
