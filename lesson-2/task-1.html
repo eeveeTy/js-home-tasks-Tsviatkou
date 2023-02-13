@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>task-1</title>
+  </head>
+  <body>
+    <script>
+        'use strict';
+
+        function words() {
+            var vowels = /[аоиеёэыуюяaeiouy]/g;
+            var string = prompt("Введите строку: ");
+
+            var k = string.match(vowels).length;
+
+            return k ? k : "Нет совподений ";
+        }
+        console.log(words());
+    </script>
+  </body>
+</html>

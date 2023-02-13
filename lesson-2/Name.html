@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+        'use strict';
+        /* Этот файл сугубо для теста функций */
+
+
+        // var name = prompt("Введите имя: ");
+        // console.log(name.indexOf('1'));
+        // console.log(name.indexOf('2'));
+        // console.log(name.indexOf('3'));
+        // console.log(name.indexOf('4'));
+        // console.log(name.indexOf('5'));
+        // console.log(name.indexOf('6'));
+        // console.log(name.indexOf('7'));
+        // console.log(name.indexOf('8'));
+        // console.log(name.indexOf('9'));
+        // console.log(name.indexOf('0'));
+
+
+        /* Вариант один - не работает */
+        function test() {
+            return text.indexOf('1') >= 0 ||
+                text.indexOf('2') >= 0 ||
+                text.indexOf('3') >= 0 ||
+                text.indexOf('4') >= 0 ||
+                text.indexOf('5') >= 0 ||
+                text.indexOf('6') >= 0 ||
+                text.indexOf('7') >= 0 ||
+                text.indexOf('8') >= 0 ||
+                text.indexOf('9') >= 0 ||
+                text.indexOf('0') >= 0
+        }
+
+        //var text = prompt('введите ');
+        // console.log(test(text))
+
+
+        /* Вариант два - не работает */
+        // var name = prompt('Введите имя: ');
+        // var disable = /[1234567890]/g;
+        // var k = name.match(disable).length;
+
+
+        function text() {
+            var nameAgain = prompt('Некорректный ввод, введите ИМЯ ещё раз: ');
+            var disableAgain = /[1234567890]/g; /* тут тоже есть проблемка, я пытался заменить на подобии 0-9, ^0-9, /^[0-9]+$/ и тд, но не хотел */
+            var k = nameAgain.match(disableAgain).length;
+            if (k >= 0 || k === null) {
+                console.log('1'); /* Это просто для теста */
+                text();
+            } else { /* я понимаю что тут появляется значение Null, которые != 0, но и среагировать на сам Null я не знаю как((( */
+                console.log('2');
+            }
+        }
+
+
+        // Вот тут кажется что-то насчупал, но не успел по времени
+        function secondTest() {
+            var firstnameTwo = prompt('Введите имя ещё раз');
+            var m = firstnameTwo.match(/[1234567890]/gi);
+            if (m === null) {
+                return 0;
+            } else {
+                firstname = firstnameTwo;
+            }
+            return m.length;
+        }
+
+        var firstname = prompt('Введите имя');
+
+        var a = secondTest(firstname);
+        console.log(a);
+
+        if (a > 0){
+            console.log('a');
+            secondTest(firstname);
+        } else {
+            console.log('b');
+        }
+
+        alert(firstname);
+
+    </script>
+  </body>
+</html>
